@@ -1,0 +1,49 @@
+@using Microsoft.AspNetCore.Components.Forms
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h1>Nueva Cuenta</h1>
+            <form action="/cuenta/create" method="post">
+                
+                <div class="mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" Name="nombre" id="nombre" value="@Model.nombre">
+                    @Html.ValidationMessage("nombre")
+                </div>
+                
+                <div>
+                    <label for="categoria">Categoria</label>
+                    <select class="form-select" name="categoria" id="categoria">
+                        <option value="PROPIO">Propio</option>
+                        <option value="CREDITO">Credito</option>
+                    </select>
+                </div>
+                
+                
+                
+                <div class="mb-3">
+                    <label for="saldoInicial">Saldo Inicial</label>
+                    <input type="text" class="form-control" Name="saldoInicial" id="saldoInicial" value="@Model.saldoInicial">
+                </div>
+                @Html.ValidationMessage("saldoInicial", new{id="saldoInicialValidacion"})
+                
+                
+                <div>
+                    <label for="moneda">Moneda</label>
+                    <select class="form-select" name="moneda" id="moneda">
+                        <option value="DOLARES">Dolares</option>
+                        <option value="SOLES">Soles</option>
+                    </select>
+                </div>
+                
+                
+
+                <br>
+                <button class="btn btn-primary">Guardar</button>
+                <a href="/cuenta/index" class="btn btn-link">Cancelar</a>
+            </form>
+        </div>
+    </div>
+
+</div>

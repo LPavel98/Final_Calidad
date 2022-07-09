@@ -1,0 +1,276 @@
+{
+  "id": "5a02d0d2-1c49-43e9-b2e9-9d4e88f42c86",
+  "version": "2.0",
+  "name": "final_selenium",
+  "url": "https://localhost:7009/",
+  "tests": [{
+    "id": "ab9f7a47-58e8-4151-8955-ce0ef1cd7581",
+    "name": "registrar transaccion",
+    "commands": [{
+      "id": "ea78baa3-d9a4-4654-8733-a7c49fd6648f",
+      "comment": "",
+      "command": "open",
+      "target": "https://localhost:7009/transaccion/create",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d6c28409-c63e-46de-8d2d-da99edd46594",
+      "comment": "",
+      "command": "select",
+      "target": "id=Tipo",
+      "targets": [],
+      "value": "label=Gasto"
+    }, {
+      "id": "a491865c-6221-46e2-b2ba-370c7fcacf23",
+      "comment": "",
+      "command": "type",
+      "target": "id=fecha",
+      "targets": [
+        ["id=fecha", "id"],
+        ["name=fecha", "name"],
+        ["css=#fecha", "css:finder"],
+        ["xpath=//input[@id='fecha']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2022-07-15T23:00"
+    }, {
+      "id": "1596fc2b-6564-406b-8ffa-d552a923587b",
+      "comment": "",
+      "command": "type",
+      "target": "id=descripcion",
+      "targets": [
+        ["id=descripcion", "id"],
+        ["name=descripcion", "name"],
+        ["css=#descripcion", "css:finder"],
+        ["xpath=//input[@id='descripcion']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "primera transaccion"
+    }, {
+      "id": "955eda71-70da-4e38-a679-23376330b1f0",
+      "comment": "",
+      "command": "type",
+      "target": "id=monto",
+      "targets": [
+        ["id=monto", "id"],
+        ["name=monto", "name"],
+        ["css=#monto", "css:finder"],
+        ["xpath=//input[@id='monto']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "ed3f6016-262f-491d-9fca-17b3b40f4b9d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pb-3",
+      "targets": [
+        ["css=.pb-3", "css:finder"],
+        ["xpath=//main", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e489d1d-ecd4-440c-8856-fb88bf43cb9b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Guardar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1518b9c9-805e-455a-a6dd-2145a4fb1d1e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=TransaccionIndex",
+      "targets": [
+        ["id=TransaccionIndex", "id"],
+        ["css=#TransaccionIndex", "css:finder"],
+        ["xpath=//h1[@id='TransaccionIndex']", "xpath:attributes"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Transacciones')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d1dfc212-d232-4a99-a973-5c62c0bdb197",
+    "name": "Crear incorrecto",
+    "commands": [{
+      "id": "3f8cbd72-917b-4593-8ce9-f249a0402ec7",
+      "comment": "",
+      "command": "open",
+      "target": "https://localhost:7009/cuenta/create",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4628cc7a-e25a-45cc-b593-337d3b83704e",
+      "comment": "",
+      "command": "select",
+      "target": "id=categoria",
+      "targets": [],
+      "value": "label=Credito"
+    }, {
+      "id": "c66f318c-60fd-440f-ab97-6a699e23c418",
+      "comment": "",
+      "command": "type",
+      "target": "id=saldoInicial",
+      "targets": [
+        ["id=saldoInicial", "id"],
+        ["name=saldoInicial", "name"],
+        ["css=#saldoInicial", "css:finder"],
+        ["xpath=//input[@id='saldoInicial']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "200"
+    }, {
+      "id": "a6fe7b50-50d9-42b3-8799-e3ebe2920a87",
+      "comment": "",
+      "command": "select",
+      "target": "id=moneda",
+      "targets": [],
+      "value": "label=Soles"
+    }, {
+      "id": "47b2c903-ae87-458f-ab07-bfd48d6bc66a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Guardar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "efab1936-8a05-4564-8af1-c378844f5dab",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.field-validation-error",
+      "targets": [
+        ["css=.field-validation-error", "css:finder"],
+        ["xpath=//form/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'The nombre field is required.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d58643b9-86d3-4ea1-96a3-ffd60b83a199",
+    "name": "Transaccion Incorrecta",
+    "commands": [{
+      "id": "506ded7c-5d4f-4046-8e18-4194d9029f5f",
+      "comment": "",
+      "command": "open",
+      "target": "https://localhost:7009/transaccion/create",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7419a568-c034-4dc4-9586-fbfbbc8ca643",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "996x843",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce1acacb-b231-4433-9066-fe3715210991",
+      "comment": "",
+      "command": "click",
+      "target": "id=Tipo",
+      "targets": [
+        ["id=Tipo", "id"],
+        ["name=Tipo", "name"],
+        ["css=#Tipo", "css:finder"],
+        ["xpath=//select[@id='Tipo']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f605545d-d071-41f5-90af-4c6da9de85ec",
+      "comment": "",
+      "command": "select",
+      "target": "id=Tipo",
+      "targets": [],
+      "value": "label=Gasto"
+    }, {
+      "id": "58e772af-28eb-46e8-8936-512b3433ca88",
+      "comment": "",
+      "command": "click",
+      "target": "id=fecha",
+      "targets": [
+        ["id=fecha", "id"],
+        ["name=fecha", "name"],
+        ["css=#fecha", "css:finder"],
+        ["xpath=//input[@id='fecha']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c90b747-7e4e-40ff-a422-70984812c704",
+      "comment": "",
+      "command": "type",
+      "target": "id=fecha",
+      "targets": [
+        ["id=fecha", "id"],
+        ["name=fecha", "name"],
+        ["css=#fecha", "css:finder"],
+        ["xpath=//input[@id='fecha']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2022-07-09T23:09"
+    }, {
+      "id": "f8709900-f3ec-4ca8-a57e-53e8ab00f250",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row",
+      "targets": [
+        ["css=.row", "css:finder"],
+        ["xpath=//main/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc98c155-41ac-47da-8b91-2086c02eeec8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-6",
+      "targets": [
+        ["css=.col-6", "css:finder"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f3b0517-b80d-47af-b4cc-1a89b9dfb26b",
+      "comment": "",
+      "command": "type",
+      "target": "id=monto",
+      "targets": [
+        ["id=monto", "id"],
+        ["name=monto", "name"],
+        ["css=#monto", "css:finder"],
+        ["xpath=//input[@id='monto']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "ca01eb76-38ef-47a1-a247-c4ca606bff4c",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.mb-3:nth-child(3) > label",
+      "targets": [
+        ["css=.mb-3:nth-child(3) > label", "css:finder"],
+        ["xpath=//div[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Descripcion')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0de310ef-0d53-41c7-9a26-c31b1f84b0ba",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ab9f7a47-58e8-4151-8955-ce0ef1cd7581"]
+  }],
+  "urls": ["https://localhost:7009/"],
+  "plugins": []
+}
